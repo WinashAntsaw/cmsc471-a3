@@ -63,7 +63,7 @@ function cleanUpData(data){
 function createWhiteHat(data) {
     const margin = {top: 40, right: 40, bottom: 40, left: 60};
     const width = 600 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+    const height = 415 - margin.top - margin.bottom;
     data = data.filter(d => d.UNIT_MEASURE == "KG_CO2E_PS" && d.MEASURE == "T_LULU");
     console.log(data);
     let ref_areas = ["USA", "GBR", "FRA"];

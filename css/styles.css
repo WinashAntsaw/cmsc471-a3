@@ -1,73 +1,209 @@
 /* Reset default styles */
 * {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0px auto;
-    line-height: 1.8;
+  font-family: Tahoma, sans-serif;
+  /*max-width: 800px;*/
+  margin: 0px auto;
+  line-height: 1.8;
 }
 
 /* Container styling for layout */
 .container {
-    max-width: 800px;
-    margin: 2rem auto;
-    font-family: Arial, sans-serif;
+  max-width: 1600px;
+  height: 1000px;
+  background-color: rgb(83, 108, 119);
+  overflow-x:hidden;
 }
-
 
 /* SVG Canvas styles */
 #vis svg {
-    margin: 0 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    border: 1px solid #ccc;
+  margin: 0 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  border: 1px solid #ccc;
 }
 
 .x-axis path,
 .y-axis path,
 .x-axis line,
 .y-axis line {
-    stroke: #333;
-    shape-rendering: crispEdges;
+  stroke: #333;
+  shape-rendering: crispEdges;
 }
 
 .x-axis text,
 .y-axis text {
-    font-size: 12px;
-    font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
 }
 
 .axis-label {
-    font-size: 14px;
-    font-weight: bold;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 button {
-    margin:0rem;
-    border-radius: 3;
-    border-color:white;
-    background-color:blue;
-    color:white;
-    font-size:medium
+  margin:0rem;
+  border-radius: 3;
+  border-color:white;
+  background-color:blue;
+  color:white;
+  font-size:medium
 }
 
 button:hover{
-    border-color:blue;
-    background-color:white;
-    color:blue
+  border-color:blue;
+  background-color:white;
+  color:blue
 }
 
 button:active{
-    font-size:small
+  font-size:small
 }
 
 #tooltip {
-    position: absolute; /* So we can move it with the cursor */
-    padding: 10px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    pointer-events: none; /* Prevent tooltip from interfering with mouse events */
-    font-size: 10px;
-    color: #fff;
-    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000
+  position: absolute; /* So we can move it with the cursor */
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  pointer-events: none; /* Prevent tooltip from interfering with mouse events */
+  font-size: 10px;
+  color: #fff;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000
+}
+
+.center {
+  height: 100%;
+  width: 80%;
+  left: 10%;
+  background-color: rgb(83, 108, 119);
+  color:rgb(194, 194, 194);
+  text-align: center;
+  transition: 0.5s;
+}
+
+.left {
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(240, 240, 240);
+  color: rgb(40,40,40);
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  overflow-y: hidden;
+  
+}
+
+.white {
+  height: 100%;
+  width: 50%;
+  left: 0;
+  float: left;
+  overflow-x: hidden;
+  visibility: hidden;
+  background-color: rgb(240, 240, 240);
+}
+
+/*.toggle-w {
+  height: 100%;
+  width: 50%;
+  right: 0;
+  overflow-x: hidden;
+  float: right;
+  transition: 0.5s;
+  overflow-y: hidden;
+  color:rgb(199, 199, 199);
+  background-color: rgb(240, 240, 240);
+
+}*/
+
+.right {
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgb(40,40,40);
+  color: rgb(240, 240, 240);
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.black {
+  height: 100%;
+  width: 50%;
+  right: 0;
+  float: right;
+  /*overflow-x: hidden;*/
+  visibility: hidden;
+  background-color: rgb(40,40,40);
+}
+
+/*.toggle-b {
+  height: 100%;
+  width: 50%;
+  left: 0;
+  overflow-x: hidden;
+  float: left;
+  color:rgb(87, 87, 87);
+  background-color: rgb(40,40,40);
+}*/
+
+.format {
+  position: absolute;
+  width: 600px;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+}
+
+.main {
+  transition: .5s;
+  padding: 20px;
+  max-width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: justify;
+}
+
+.close {
+  transition: .5s;
+  margin-top: 1%;
+  text-align: justify;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  visibility: collapse;
+  text-align: center;
+  opacity: 0%;
+}
+
+.close:hover {
+  transition: .5s;
+  color: rgb(40,40,40)
+}
+
+.open:hover {
+  transition: .5s;
+  color: rgb(40,40,40)
+}
+
+.centered {
+  position: absolute;
+  width: fit-content;
+  top: 2%;
+  padding: 20px;
+  /*background-color: rgb(240, 240, 240);*/
+}
+
+.centered2 {
+  position: absolute;
+  width: fit-content;
+  top: 2%;
+  padding: 20px;
+  /*background-color: rgb(40,40,40);*/
 }

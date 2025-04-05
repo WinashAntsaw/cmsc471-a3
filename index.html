@@ -7,69 +7,145 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container"> <!-- Centers content and sets max width -->
-        <h1>White Hat and Black Hat Visualizaitons of Greenhouse Gas Data</h1>
-        
-        <div id="wVis"></div> <!--  Will hold our visualization (SVG) -->
-        <p>
-            The following visualization shows the Pollution per capita of three major countries (USA, UK, and France), to demonstrate the differences in pollution between each 
-            country and across time. We can see the changes in pollution levels over the years as policies and industries change, as well as see clear differences in how each 
-            country’s level of pollution. We made some specific design decisions as we were creating this visualization. For one, we initially wanted to look at total pollution 
-            levels, but due to the drastic differences in population between some countries, it would’ve been more fair to adjust based on population for each. We also had to 
-            make sure the scales we used were not misleading. Initially, we scaled it in such a way that it started at 0, but doing it in that way made it much more difficult 
-            to see the changes over time, as those tended to be less pronounced than the differences between countries. It would be unfair to only say one country was creating 
-            more pollution, and not be able to see whether or not they were attempting to actually improve their level of pollution. Thus the minimum value of the scale is 
-            actually the minimum value within the data, not 0. We made sure to clearly label the Y-Axis so that this change would not be misleading. We also color coded each 
-            country on a discrete color scale so that users could easily distinguish between countries, that way it was easy to see the change across years for even countries 
-            that were similar in pollution levels
-        </p>
-
-
-        <div id="bVis">
-            <div class='tableauPlaceholder' id='viz1743815636928' style='position: relative'>
-                <noscript>
-                    <a href='#'>
-                        <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1_rss.png' style='border: none' />
-                    </a>
-                </noscript>
-                <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-                    <param name='embed_code_version' value='3' /> 
-                    <param name='site_root' value='' />
-                    <param name='name' value='GreenhouseGasEmissions_17438155233620&#47;Sheet1' />
-                    <param name='tabs' value='no' />
-                    <param name='toolbar' value='yes' />
-                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1.png' /> 
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
-                    <param name='language' value='en-US' />
-                </object>
-            </div>                
-            <script type='text/javascript'>                    
-                var divElement = document.getElementById('viz1743815636928');                    
-                var vizElement = divElement.getElementsByTagName('object')[0];                    
-                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
-                var scriptElement = document.createElement('script');                    
-                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
-                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-            </script>
-
-            <p>To create this black hat chart, we focused on average per-capita greenhouse gas emissions for the US, China, and India but never explicitly label it as “per capita.” 
-                While the US does have higher per-person emissions, China’s total is much larger, with 12 million tons versus the US’s 4 million. 
-                That difference is masked when divided by China’s massive population. India, with 2 million total but a far larger population, appears negligible on a per-capita basis, 
-                reinforcing the illusion that the US is the worst offender. We also slightly truncate the y-axis to start at 1 instead of 0, exaggerating differences among the bars. 
-                Cutting it further would magnify this gap even more, but we are limited by India’s already tiny bar. Another deceptive tactic is filtering out post-2016 data. 
-                China and India’s observations end before 2016, while the US has downward-trending years after that. Ignoring these later points increases the US’s average. 
-                Meanwhile, we aggregate “average emissions,” knowing the US has far more data points than India and China, further skewing comparisons. 
-                By cherry-picking these three nations, we omit countries like Russia, Mexico, or Canada, whose populations and emissions might diminish the US’s apparent lead. 
-                Finally, applying a color scale and coloring the US with a disproportionately red color visually amplifies its size. All together, omitting “per capita” from the chart (labeling), 
-                truncating the y-axis and using a deceptive color scale (encoding), cutting off later data, and selecting just three countries (data transformation), 
-                this creates an effective black hat visualization that falsely suggests the US is by far the world’s largest emitter.</p>
+    <div class="container">
+    <div id="left" class="left">
+        <div id="white" class="white">
+            <div class="format">
+                <h2 style="text-align: center;">White Hat Visualization</h2><br>
+                <div id="wVis"></div> <!--  Will hold our visualization (SVG) -->
+                <br>
+                <p><br>&emsp;&emsp;The following visualization shows the Pollution per capita of three major countries (USA, UK, and France), to demonstrate the differences in pollution between each 
+                    country and across time. We can see the changes in pollution levels over the years as policies and industries change, as well as see clear differences in how each 
+                    country’s level of pollution. We made some specific design decisions as we were creating this visualization. For one, we initially wanted to look at total pollution 
+                    levels, but due to the drastic differences in population between some countries, it would’ve been more fair to adjust based on population for each. We also had to 
+                    make sure the scales we used were not misleading. Initially, we scaled it in such a way that it started at 0, but doing it in that way made it much more difficult 
+                    to see the changes over time, as those tended to be less pronounced than the differences between countries. It would be unfair to only say one country was creating 
+                    more pollution, and not be able to see whether or not they were attempting to actually improve their level of pollution. Thus the minimum value of the scale is 
+                    actually the minimum value within the data, not 0. We made sure to clearly label the Y-Axis so that this change would not be misleading. We also color coded each 
+                    country on a discrete color scale so that users could easily distinguish between countries, that way it was easy to see the change across years for even countries 
+                    that were similar in pollution levels.<br><br>
+                </p>
+            </div>
         </div>
+      </div>
+
+      <div id="center" class="center">
+        <div id="close" class="close" onclick="closeLeft();closeRight()"><h2>◁▷</h2></div>
+        <div id="main" class="main">
+            <h2 style="text-align: center;">White Hat and Black Hat Visualizations of Greenhouse Gas Data</h2>
+            <h6 style="text-align: center;">created by Ashwin Sawant, Daniel Fesenko, and Serena Choy</h6><br>
+            <p id="open" class="open" style="text-align: center; font-style: italic;" onclick="openLeft();openRight()">▷ Click here to view the visualizations ◁</p><br>
+            <p>&emsp;&emsp;References to data resources. Be sure to list the data source you used. If your work adapts or builds on existing visualization examples, please cite those as well.
+                <br>&emsp;&emsp;An overview of your development process. Describe how the work was split among the team members. Include a commentary on the development process, including answers to the following questions: Roughly how much time did you spend developing your application (in people-hours)? What aspects took the most time?
+                
+            </p>
+                </div>
+          </div>
+      </div>
+
+      <div id="right" class="right">
+        <div id="black" class="black">
+            <div class="format">
+                <h2 style="text-align: center;">Black Hat Visualization</h2><br>
+                <div id="bVis">
+                    <div class='tableauPlaceholder' id='viz1743815636928' style='position: relative'>
+                        <noscript>
+                            <a href='#'>
+                                <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1_rss.png' style='border: none' />
+                            </a>
+                        </noscript>
+                        <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                            <param name='embed_code_version' value='3' /> 
+                            <param name='site_root' value='' />
+                            <param name='name' value='GreenhouseGasEmissions_17438155233620&#47;Sheet1' />
+                            <param name='tabs' value='no' />
+                            <param name='toolbar' value='yes' />
+                            <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1.png' /> 
+                            <param name='animate_transition' value='yes' />
+                            <param name='display_static_image' value='yes' />
+                            <param name='display_spinner' value='yes' />
+                            <param name='display_overlay' value='yes' />
+                            <param name='display_count' value='yes' />
+                            <param name='language' value='en-US' />
+                        </object>
+                    </div>                
+                    <script type='text/javascript'>                    
+                        var divElement = document.getElementById('viz1743815636928');                    
+                        var vizElement = divElement.getElementsByTagName('object')[0];                    
+                        vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                        var scriptElement = document.createElement('script');                    
+                        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+                    </script>
+                </div>
+                <p><br>
+                    <p>&emsp;&emsp;To create this black hat chart, we focused on average per-capita greenhouse gas emissions for the US, China, and India but never explicitly label it as “per capita.” 
+                        While the US does have higher per-person emissions, China’s total is much larger, with 12 million tons versus the US’s 4 million. 
+                        That difference is masked when divided by China’s massive population. India, with 2 million total but a far larger population, appears negligible on a per-capita basis, 
+                        reinforcing the illusion that the US is the worst offender. We also slightly truncate the y-axis to start at 1 instead of 0, exaggerating differences among the bars. 
+                        Cutting it further would magnify this gap even more, but we are limited by India’s already tiny bar. 
+                        <br>&emsp;&emsp;Another deceptive tactic is filtering out post-2016 data. 
+                        China and India’s observations end before 2016, while the US has downward-trending years after that. Ignoring these later points increases the US’s average. 
+                        Meanwhile, we aggregate “average emissions,” knowing the US has far more data points than India and China, further skewing comparisons. 
+                        By cherry-picking these three nations, we omit countries like Russia, Mexico, or Canada, whose populations and emissions might diminish the US’s apparent lead. 
+                        Finally, applying a color scale and coloring the US with a disproportionately red color visually amplifies its size. All together, omitting “per capita” from the chart (labeling), 
+                        truncating the y-axis and using a deceptive color scale (encoding), cutting off later data, and selecting just three countries (data transformation), 
+                        this creates an effective black hat visualization that falsely suggests the US is by far the world’s largest emitter.</p>
+                        <br>
+                        <br>
+                    </p>
+                </div>
+        </div>
+      </div>
     </div>
-    
+      
+      <script>
+        function openLeft() {
+                document.getElementById("left").style.width = "48%";
+                document.getElementById("white").style.visibility = "visible";
+                document.getElementById("white").style.width = "90%";
+                document.getElementById("main").style.opacity = "0%";
+                document.getElementById("left").style.overflowY = "auto";
+                document.getElementById("left").style.overflowX = "auto";
+                document.getElementById("close").style.opacity = "100%";
+                document.getElementById("close").style.visibility = "visible";
+        }
+
+        function closeLeft() {
+                document.getElementById("left").style.width = "10%";
+                document.getElementById("white").style.visibility = "hidden";
+                document.getElementById("white").style.width = "50%";
+                document.getElementById("main").style.opacity = "100%";
+                document.getElementById("main").style.height = "100%";
+                document.getElementById("left").style.overflowY = "hidden";
+                document.getElementById("left").style.overflowX = "hidden";
+                document.getElementById("close").style.opacity = "0%";
+                document.getElementById("close").style.visibility = "collapse";
+        }
+
+        function openRight() {
+                document.getElementById("right").style.width = "48%";
+                document.getElementById("black").style.visibility = "visible";
+                document.getElementById("black").style.width = "90%";
+                document.getElementById("main").style.opacity = "0%";
+                document.getElementById("right").style.overflowY = "auto";
+                document.getElementById("right").style.overflowX = "auto";
+                document.getElementById("close").style.opacity = "100%";
+                document.getElementById("close").style.visibility = "visible";
+        }
+
+        function closeRight() {
+                document.getElementById("right").style.width = "10%";
+                document.getElementById("black").style.visibility = "hidden";
+                document.getElementById("black").style.width = "50%";
+                document.getElementById("main").style.opacity = "100%";
+                document.getElementById("right").style.overflowY = "hidden";
+                document.getElementById("left").style.overflowX = "hidden";
+                document.getElementById("close").style.opacity = "0%";
+                document.getElementById("close").style.visibility = "collapse";
+        }
+      </script>
+
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="js/script.js"></script>
