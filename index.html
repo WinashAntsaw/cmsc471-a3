@@ -11,7 +11,49 @@
         <h1>White Hat and Black Hat Visualizaitons of Greenhouse Gas Data</h1>
         
         <div id="wVis"></div> <!--  Will hold our visualization (SVG) -->
-        <div id="bVis"></div>
+        <div id="bVis">
+            <div class='tableauPlaceholder' id='viz1743815636928' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> 
+                    <param name='site_root' value='' />
+                    <param name='name' value='GreenhouseGasEmissions_17438155233620&#47;Sheet1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gr&#47;GreenhouseGasEmissions_17438155233620&#47;Sheet1&#47;1.png' /> 
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>                
+            <script type='text/javascript'>                    
+                var divElement = document.getElementById('viz1743815636928');                    
+                var vizElement = divElement.getElementsByTagName('object')[0];                    
+                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    
+                var scriptElement = document.createElement('script');                    
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+            </script>
+
+            <p>To create this black hat chart, we focused on average per-capita greenhouse gas emissions for the US, China, and India but never explicitly label it as “per capita.” 
+                While the US does have higher per-person emissions, China’s total is much larger, with 12 million tons versus the US’s 4 million. 
+                That difference is masked when divided by China’s massive population. India, with 2 million total but a far larger population, appears negligible on a per-capita basis, 
+                reinforcing the illusion that the US is the worst offender. We also slightly truncate the y-axis to start at 1 instead of 0, exaggerating differences among the bars. 
+                Cutting it further would magnify this gap even more, but we are limited by India’s already tiny bar. Another deceptive tactic is filtering out post-2016 data. 
+                China and India’s observations end before 2016, while the US has downward-trending years after that. Ignoring these later points increases the US’s average. 
+                Meanwhile, we aggregate “average emissions,” knowing the US has far more data points than India and China, further skewing comparisons. 
+                By cherry-picking these three nations, we omit countries like Russia, Mexico, or Canada, whose populations and emissions might diminish the US’s apparent lead. 
+                Finally, applying a color scale and coloring the US with a disproportionately red color visually amplifies its size. All together, omitting “per capita” from the chart (labeling), 
+                truncating the y-axis and using a deceptive color scale (encoding), cutting off later data, and selecting just three countries (data transformation), 
+                this creates an effective black hat visualization that falsely suggests the US is by far the world’s largest emitter.</p>
+        </div>
     </div>
     
     <!-- Load D3.js -->
