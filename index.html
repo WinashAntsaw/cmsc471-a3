@@ -11,6 +11,20 @@
         <h1>White Hat and Black Hat Visualizaitons of Greenhouse Gas Data</h1>
         
         <div id="wVis"></div> <!--  Will hold our visualization (SVG) -->
+        <p>
+            The following visualization shows the Pollution per capita of three major countries (USA, UK, and France), to demonstrate the differences in pollution between each 
+            country and across time. We can see the changes in pollution levels over the years as policies and industries change, as well as see clear differences in how each 
+            country’s level of pollution. We made some specific design decisions as we were creating this visualization. For one, we initially wanted to look at total pollution 
+            levels, but due to the drastic differences in population between some countries, it would’ve been more fair to adjust based on population for each. We also had to 
+            make sure the scales we used were not misleading. Initially, we scaled it in such a way that it started at 0, but doing it in that way made it much more difficult 
+            to see the changes over time, as those tended to be less pronounced than the differences between countries. It would be unfair to only say one country was creating 
+            more pollution, and not be able to see whether or not they were attempting to actually improve their level of pollution. Thus the minimum value of the scale is 
+            actually the minimum value within the data, not 0. We made sure to clearly label the Y-Axis so that this change would not be misleading. We also color coded each 
+            country on a discrete color scale so that users could easily distinguish between countries, that way it was easy to see the change across years for even countries 
+            that were similar in pollution levels
+        </p>
+
+
         <div id="bVis">
             <div class='tableauPlaceholder' id='viz1743815636928' style='position: relative'>
                 <noscript>
