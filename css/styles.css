@@ -191,6 +191,15 @@ button:active{
   transition: .5s;
   color: rgb(40,40,40)
 }
+.link {
+  transition: .5s;
+  color:rgb(194, 194, 194);
+}
+
+.link:hover {
+  transition: .5s;
+  color: rgb(40,40,40)
+}
 
 .centered {
   position: absolute;
